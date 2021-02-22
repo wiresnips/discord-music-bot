@@ -1,3 +1,18 @@
+
+
+
+You'll want to `git update-index --assume-unchanged src/run.js`, and then update it with real values.
+
+
+
+
+
+
+
+
+
+
+
 # Discord Music Bot
 
 🎧 A music bot for Discord servers, self-hosted and easy to use.

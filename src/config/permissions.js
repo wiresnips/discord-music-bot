@@ -4,6 +4,7 @@ module.exports = {
     summon: true,
     pause: true,
     play: true,
+    queue: true,
     resume: true,
     stop: true,
     skip: true,

@@ -422,9 +422,15 @@ class MusicBot {
    * @param {object} message - The original message object.
    * @param {string} videoId - The Youtube video id.
    */
-  queueYoutubeVideo(message, videoId) {
+  queueYoutubeVideo(message, videoId, playImmediately=false) {
     util.getYoutubeVideoDetails(message.author.username, videoId).then((videoDetails) => {
-      this.playlistQueue.push(videoDetails);
+      
+      if (playImmediately) {
+        this.playlistQueue.unshift(videoDetails)
+      }
+      else {
+        this.playlistQueue.push(videoDetails);
+      }
 
       message.reply(format(this.getReplyMsg(COMMAND_GROUP, 'youtubeVideoAdded'), videoDetails.title));
 
